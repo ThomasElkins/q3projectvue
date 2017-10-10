@@ -16,6 +16,7 @@ export default {
 
   mounted () {
     this.createMap()
+    this.addTrails()
     this.$store.dispatch('getTrails')
   },
 

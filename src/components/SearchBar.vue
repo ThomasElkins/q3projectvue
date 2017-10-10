@@ -5,7 +5,6 @@
         <v-text-field name="input-1" label="City" id="testing"></v-text-field>
         <v-select
           v-bind:items="realms"
-          v-model="al"
           label="State"
           append-icon="map"
           autocomplete
@@ -15,8 +14,7 @@
         <v-flex md1></v-flex>
       <v-flex md6>
         <v-select class="padme"
-          v-bind:items="type"
-          v-model="e2"
+          v-bind:items="activity"
           label="Activity"
           single-line
           auto
@@ -25,7 +23,6 @@
         ></v-select>
         <v-select
           v-bind:items="radius"
-          v-model="e2"
           label="Radius"
           single-line
           auto
@@ -48,7 +45,9 @@
           'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
           'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
           'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-        ]
+        ],
+        activity: ['Hiking', 'Camping'],
+        radius: [10,20,30,40,50]
       }
     }
   }
