@@ -4,7 +4,7 @@
       <Toolbar></Toolbar>
       <SearchBar></SearchBar>
       <MyMap></MyMap>
-      <Footer></Footer>
+      <BottomNav></BottomNav>
     </v-app>
   </div>
 </template>
@@ -13,7 +13,7 @@
 import Toolbar from './components/Toolbar.vue'
 import SearchBar from './components/SearchBar.vue'
 import MyMap from './components/MyMap.vue'
-import Footer from './components/Footer.vue'
+import BottomNav from './components/BottomNav.vue'
 
 export default {
   name: 'app',
@@ -21,7 +21,7 @@ export default {
     Toolbar,
     SearchBar,
     MyMap,
-    Footer
+    BottomNav
   }
 }
 </script>
