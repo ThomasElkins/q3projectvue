@@ -2,16 +2,19 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Vuetify from 'vuetify'
+import * as VueGoogleMaps from 'vue2-google-maps'
 import App from './App'
-import Mapbox from 'mapbox-gl-vue'
 import router from './router'
 import {store} from './store'
-window.mapboxgl = require('mapbox-gl');
 
 Vue.config.productionTip = false
 
 Vue.use(Vuetify)
-Vue.component('mapbox', require('mapbox-gl-vue/src/components/Mapbox.vue'))
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyDysTMMJGBMd3xGFhySpk4D-uKW3p7L47s'
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
@@ -19,5 +22,5 @@ new Vue({
   store,
   router,
   template: '<App/>',
-  components: { App, 'mapbox': Mapbox }
+  components: { App }
 })

@@ -2,7 +2,7 @@
   <v-container>
     <v-layout row justify-center>
       <v-flex md6>
-        <v-text-field name="input-1" label="City" id="testing"></v-text-field>
+        <v-text-field name="search-inputs" label="City"></v-text-field>
         <v-select
           v-bind:items="realms"
           label="State"
