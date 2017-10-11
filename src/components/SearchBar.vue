@@ -14,15 +14,6 @@
       </v-flex>
         <v-flex md1></v-flex>
       <v-flex md6>
-        <v-select number class="padme"
-          v-model="searchRadius"
-          v-bind:items="radius"
-          label="Radius"
-          single-line
-          auto
-          append-icon="map"
-          hide-details
-        ></v-select>
         <v-btn block color="green lighten-3" v-on:click="executeSearch" dark>Search</v-btn>
       </v-flex>
     </v-layout>
@@ -43,13 +34,14 @@
         ],
         radius: [10,20,30,40,50],
         searchCity: '',
-        searchState: '',
-        searchRadius: 100
+        searchState: ''
       }
     },
     methods: {
       executeSearch() {
-        this.$store.dispatch('getTrails', this.searchCity)
+        this.$store.dispatch('getTrails', [this.searchCity, this.searchState])
+        this.searchCity = ''
+        this.searchState = 'State'
       }
     }
   }

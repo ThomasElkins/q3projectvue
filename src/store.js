@@ -14,8 +14,8 @@ export const store = new Vuex.Store({
     }
   },
   actions: {
-    getTrails(context, searchCity) {
-      axios.get(`https://trailapi-trailapi.p.mashape.com/?limit=100&q[activities_activity_type_name_eq]=hiking&q[city_cont]=${searchCity}&q[state_cont]=Arizona&radius=100`,
+    getTrails(context, [searchCity, searchState]) {
+      axios.get(`https://trailapi-trailapi.p.mashape.com/?limit=100&q[activities_activity_type_name_eq]=hiking&q[city_cont]=${searchCity}&q[state_cont]=${searchState}&radius=100`,
         {headers: {"X-Mashape-Key": "zUC9v7vhTTmshRZhrNE1rQk5JtbGp1SS6DujsnmsruSvj2RWYd"}})
           .then(res => context.commit('setTrails', res.data.places))
     }
