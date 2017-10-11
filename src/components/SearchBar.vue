@@ -2,8 +2,9 @@
   <v-container>
     <v-layout row justify-center>
       <v-flex md6>
-        <v-text-field name="search-inputs" label="City"></v-text-field>
+        <v-text-field v-model="searchCity" name="userSearch" label="City"></v-text-field>
         <v-select
+          v-model="searchState"
           v-bind:items="realms"
           label="State"
           append-icon="map"
@@ -13,15 +14,8 @@
       </v-flex>
         <v-flex md1></v-flex>
       <v-flex md6>
-        <v-select class="padme"
-          v-bind:items="activity"
-          label="Activity"
-          single-line
-          auto
-          append-icon="map"
-          hide-details
-        ></v-select>
-        <v-select
+        <v-select number class="padme"
+          v-model="searchRadius"
           v-bind:items="radius"
           label="Radius"
           single-line
@@ -29,6 +23,7 @@
           append-icon="map"
           hide-details
         ></v-select>
+        <v-btn block color="green lighten-3" v-on:click="executeSearch" dark>Search</v-btn>
       </v-flex>
     </v-layout>
   </v-container>
@@ -46,8 +41,15 @@
           'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
           'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
         ],
-        activity: ['Hiking', 'Camping'],
-        radius: [10,20,30,40,50]
+        radius: [10,20,30,40,50],
+        searchCity: '',
+        searchState: '',
+        searchRadius: 100
+      }
+    },
+    methods: {
+      executeSearch() {
+        this.$store.dispatch('getTrails', this.searchCity)
       }
     }
   }

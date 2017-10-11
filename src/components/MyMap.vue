@@ -1,18 +1,19 @@
 <template>
   <v-container>
+    <!-- <h4 v-for='trail in trailDataLocation'>{{trail.position}}</h4> -->
     <v-flex>
       <gmap-map
         :center="center"
-        :zoom="9"
+        :zoom="3"
         style="width: 500px; height: 300px"
       >
         <gmap-marker
           :key="index"
-          v-for="(m, index) in markers"
-          :position="m.position"
+          v-for="(trail, index) in trailDataLocation"
+          :position="trail.position"
           :clickable="true"
           :draggable="true"
-          @click="center=m.position"
+          @click="center=trail.position"
         ></gmap-marker>
       </gmap-map>
     </v-flex>
@@ -33,19 +34,13 @@
 export default {
   data () {
     return {
-      center: {lat: 33, lng: -112},
-      markers: [
-        { position: {lat: 33.0, lng: -112} },
-        { position: {lat: 11.0, lng: 11.0} }
-      ]
+      center: {lat: 39.8283, lng: -98.5795}
     }
   },
-  mounted () {
-    this.$store.dispatch('getTrails')
-  },
+
   computed: {
-    trailData () {
-      return this.$store.state.trails
+    trailDataLocation () {
+      return this.$store.state.trails.map(trail => ({position: {lat: trail.lat, lng: trail.lon}}))
     }
   }
 }
