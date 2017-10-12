@@ -12,6 +12,8 @@
           :clickable="true"
           :draggable="true"
           @click="center=trail.position">
+          <gmap-info-window
+            :opened="infoWinClosed">{{trail.position.name}}</gmap-info-window>
         </gmap-marker>
       </gmap-map>
     </v-flex>
@@ -48,7 +50,7 @@ export default {
   computed: {
     trailDataLocation () {
       return this.$store.state.trails.filter(trail => trail.lat !== 0)
-      .map(trail => ({position: {lat: trail.lat, lng: trail.lon}}))
+      .map(trail => ({position: {lat: trail.lat, lng: trail.lon, name: trail.name}}))
     }
   }
 }
