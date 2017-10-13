@@ -1,6 +1,6 @@
 <template>
-  <v-footer class="pa-3 green lighten-3">
+  <v-footer class="pa-3 green darken-1">
     <v-spacer></v-spacer>
-    <div>© {{ new Date().getFullYear() }}</div>
+    <div>© Thomas Elkins {{ new Date().getFullYear() }}</div>
   </v-footer>
 </template>

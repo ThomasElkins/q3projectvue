@@ -2,8 +2,8 @@
   <v-container>
     <v-flex id="specialmapcontainer">
       <gmap-map
-        :center="center"
-        :zoom="3"
+        :center="trailDataLocation[0].position"
+        :zoom="8"
         style="width: 500px; height: 300px">
         <gmap-marker
           :key="index"
@@ -13,8 +13,15 @@
           :draggable="true"
           @click="center=trail.position">
           <gmap-info-window
-            :opened="infoWinClosed">{{trail.position.name}}</gmap-info-window>
+            :opened="false">{{trail.position.name}}</gmap-info-window>
         </gmap-marker>
+        <gmap-info-window
+          :key="index"
+          v-for="(trail, index) in trailDataLocation"
+          :position="trail.position"
+          :opened="false">
+          {{trail.position.name}}
+        </gmap-info-window>
       </gmap-map>
     </v-flex>
   </v-container>
@@ -35,7 +42,8 @@ export default {
   data () {
     return {
       center: {lat: 39.8283, lng: -98.5795},
-      markers: []
+      markers: [],
+      zoom: 9
     }
   },
   watch: {
@@ -45,12 +53,18 @@ export default {
           bounds.extend(m.position)
         }
         this.$refs.gmap.$mapObject.fitBounds(bounds)
-      }
+      },
+
     },
   computed: {
     trailDataLocation () {
       return this.$store.state.trails.filter(trail => trail.lat !== 0)
       .map(trail => ({position: {lat: trail.lat, lng: trail.lon, name: trail.name}}))
+    }
+  },
+  methods: {
+    toggleInfoWindow() {
+      this.$infowindow.open()
     }
   }
 }

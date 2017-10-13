@@ -40,6 +40,8 @@
     methods: {
       executeSearch() {
         this.$store.dispatch('getTrails', [this.searchCity, this.searchState])
+        this.$store.dispatch('getComments')
+        this.$store.dispatch('getCity', this.searchCity)
         this.searchCity = ''
         this.searchState = 'State'
       }

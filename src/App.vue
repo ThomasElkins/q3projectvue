@@ -3,7 +3,7 @@
     <v-app>
       <Toolbar></Toolbar>
       <SearchBar></SearchBar>
-      <MyMap></MyMap>
+      <MapAndComments></MapAndComments>
       <BottomNav></BottomNav>
     </v-app>
   </div>
@@ -12,7 +12,7 @@
 <script>
 import Toolbar from './components/Toolbar.vue'
 import SearchBar from './components/SearchBar.vue'
-import MyMap from './components/MyMap.vue'
+import MapAndComments from './components/MapAndComments.vue'
 import BottomNav from './components/BottomNav.vue'
 
 export default {
@@ -20,7 +20,7 @@ export default {
   components: {
     Toolbar,
     SearchBar,
-    MyMap,
+    MapAndComments,
     BottomNav
   }
 }
