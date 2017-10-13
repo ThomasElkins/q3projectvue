@@ -18,7 +18,7 @@ data () {
   }
 },
 computed: {
-  commentsForCity() {
+  commentsForCity () {
     return this.$store.state.comments.filter(comment => comment.city === this.$store.state.currentCity)
   }
 }
