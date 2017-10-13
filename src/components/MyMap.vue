@@ -1,8 +1,8 @@
 <template>
       <gmap-map
         :center="trailDataLocation[0].position"
-        :zoom="8"
-        style="width: 500px; height: 300px">
+        :zoom="11"
+        style="width: 600px; height: 400px">
         <gmap-marker
           :key="index"
           v-for="(trail, index) in trailDataLocation"

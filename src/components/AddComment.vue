@@ -1,13 +1,17 @@
 <template>
-<v-container>
+<v-container id="commentContainer">
   <v-layout>
     <v-flex>
-      <v-text-field v-model="user_name" name="Name" label="Name"></v-text-field>
-      <v-text-field v-model="city" name="City" label="City"></v-text-field>
-      <v-text-field v-model="hike_name" name="Hike" label="Hike"></v-text-field>
-      <v-text-field v-model="comment" name="CommentBody" label="Comment..."></v-text-field>
+      <v-text-field class="spaceMeOut topInput" v-model="user_name" name="Name" label="Name"></v-text-field>
+      <br />
+      <v-text-field class="spaceMeOut" v-model="city" name="City" label="City"></v-text-field>
+      <br />
+      <v-text-field class="spaceMeOut" v-model="hike_name" name="Hike" label="Hike"></v-text-field>
+      <br />
+      <v-text-field class="spaceMeOut" v-model="comment" name="CommentBody" label="Comment..."></v-text-field>
+      <br />
       <router-link to="/">
-        <v-btn round block color="blue darken-1" v-on:click="executeComment" dark>Submit Comment</v-btn>
+        <v-btn class="spaceMeOut" round block color="blue darken-1" v-on:click="executeComment" dark>Submit Comment</v-btn>
       </router-link>
     </v-flex>
   </v-layout>
@@ -31,3 +35,12 @@
   }
 }
 </script>
+<style>
+.topInput {
+  margin-top: 2%;
+}
+.spaceMeOut {
+  margin-bottom: 4%;
+}
+
+</style>

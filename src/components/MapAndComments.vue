@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid>
+  <v-container id="MCcontainer" fluid>
     <v-layout row justify-space-between>
-      <v-flex md6>
+      <v-flex offset-md1 md6>
         <MyMap></MyMap>
       </v-flex>
       <v-flex md6>
@@ -27,3 +27,5 @@ export default {
   }
 }
 </script>
+<style>
+</style>
