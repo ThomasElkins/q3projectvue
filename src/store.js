@@ -19,6 +19,12 @@ export const store = new Vuex.Store({
     },
     setCity(state, args) {
       state.currentCity = args
+    },
+    addComment(state, [user_name, city, hike_name, comment]) {
+      axios.post(`http://localhost:8000/comments`, {
+        user_name: user_name, city: city, hike_name: hike_name, comment: comment
+      })
+      .then(res => state.comments = res.data)
     }
   },
   actions: {
@@ -33,6 +39,9 @@ export const store = new Vuex.Store({
     },
     getCity(context, searchCity) {
         context.commit('setCity', `${searchCity}`)
+    },
+    addComment(context, [user_name, city, hike_name, comment]) {
+      context.commit('addComment', [user_name, city, hike_name, comment])
     }
   }
 })

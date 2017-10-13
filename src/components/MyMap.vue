@@ -11,7 +11,7 @@
           :draggable="true"
           @click="center=trail.position">
           <gmap-info-window
-            :opened="false">{{trail.position.name}}</gmap-info-window>
+            :opened="true">{{trail.position.name}}</gmap-info-window>
         </gmap-marker>
         <gmap-info-window
           :key="index"

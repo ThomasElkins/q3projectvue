@@ -2,7 +2,7 @@
   <v-container>
     <v-layout row justify-center>
       <v-flex md6>
-        <v-text-field required v-model="searchCity" name="userSearch" label="City"></v-text-field>
+        <v-text-field v-model="searchCity" name="userSearch" label="City"></v-text-field>
         <v-select
           v-model="searchState"
           v-bind:items="realms"
@@ -10,12 +10,14 @@
           append-icon="map"
           autocomplete
           hide-details
-          required
         ></v-select>
       </v-flex>
         <v-flex md1></v-flex>
       <v-flex md6>
-        <v-btn block color="blue darken-1" v-on:click="executeSearch" dark>Search</v-btn>
+        <v-btn class="padme" round block color="blue darken-1" v-on:click="executeSearch" dark>Search</v-btn>
+        <router-link to="/comments">
+          <v-btn round block color="blue darken-1" dark>Add a Comment</v-btn>
+        </router-link>
       </v-flex>
     </v-layout>
   </v-container>
@@ -26,6 +28,9 @@
     name: 'search',
     data () {
       return {
+        rules: {
+          required: (value) => !!value || 'Required.',
+        },
         realms: [
           'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
           'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts',
@@ -51,6 +56,7 @@
 </script>
 <style scoped>
   .padme {
-    padding-bottom: 6%;
+    margin-top: 4%;
+    margin-bottom: 10%;
   }
 </style>

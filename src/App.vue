@@ -2,8 +2,7 @@
   <div id="app">
     <v-app>
       <Toolbar></Toolbar>
-      <SearchBar></SearchBar>
-      <MapAndComments></MapAndComments>
+      <router-view></router-view>
       <BottomNav></BottomNav>
     </v-app>
   </div>
@@ -13,6 +12,7 @@
 import Toolbar from './components/Toolbar.vue'
 import SearchBar from './components/SearchBar.vue'
 import MapAndComments from './components/MapAndComments.vue'
+import AddComment from './components/AddComment.vue'
 import BottomNav from './components/BottomNav.vue'
 
 export default {
@@ -21,6 +21,7 @@ export default {
     Toolbar,
     SearchBar,
     MapAndComments,
+    AddComment,
     BottomNav
   }
 }
