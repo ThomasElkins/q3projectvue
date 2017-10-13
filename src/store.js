@@ -29,7 +29,7 @@ export const store = new Vuex.Store({
     },
     getComments(context) {
       axios.get(`http://localhost:8000/comments`)
-        .then(res => context.commit('setComments', res))
+        .then(res => context.commit('setComments', res.data))
     },
     getCity(context, searchCity) {
         context.commit('setCity', `${searchCity}`)

@@ -1,6 +1,4 @@
 <template>
-  <v-container>
-    <v-flex id="specialmapcontainer">
       <gmap-map
         :center="trailDataLocation[0].position"
         :zoom="8"
@@ -23,8 +21,6 @@
           {{trail.position.name}}
         </gmap-info-window>
       </gmap-map>
-    </v-flex>
-  </v-container>
 </template>
 
 <script>
@@ -39,6 +35,7 @@
   });
 
 export default {
+  name: 'MyMap',
   data () {
     return {
       center: {lat: 39.8283, lng: -98.5795},

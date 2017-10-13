@@ -2,7 +2,7 @@
   <v-container>
     <v-layout row justify-center>
       <v-flex md6>
-        <v-text-field v-model="searchCity" name="userSearch" label="City"></v-text-field>
+        <v-text-field required v-model="searchCity" name="userSearch" label="City"></v-text-field>
         <v-select
           v-model="searchState"
           v-bind:items="realms"
@@ -10,11 +10,12 @@
           append-icon="map"
           autocomplete
           hide-details
+          required
         ></v-select>
       </v-flex>
         <v-flex md1></v-flex>
       <v-flex md6>
-        <v-btn block color="green lighten-3" v-on:click="executeSearch" dark>Search</v-btn>
+        <v-btn block color="blue darken-1" v-on:click="executeSearch" dark>Search</v-btn>
       </v-flex>
     </v-layout>
   </v-container>
