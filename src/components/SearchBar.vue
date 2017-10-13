@@ -14,9 +14,9 @@
       </v-flex>
         <v-flex md1></v-flex>
       <v-flex md6>
-        <v-btn class="padme" round block color="blue darken-1" v-on:click="executeSearch" dark>Search</v-btn>
-        <router-link to="/comments">
-          <v-btn round block color="blue darken-1" dark>Add a Comment</v-btn>
+        <v-btn class="padme" round block color="light-blue darken-1" v-on:click="executeSearch" dark>Search</v-btn>
+        <router-link class="commentButton" to="/comments">
+          <v-btn round block color="light-blue darken-1" dark>Add a Comment</v-btn>
         </router-link>
       </v-flex>
     </v-layout>
@@ -59,4 +59,8 @@
     margin-top: 4%;
     margin-bottom: 10%;
   }
+  .commentButton {
+    text-decoration: none;
+  }
+
 </style>

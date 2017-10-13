@@ -10,8 +10,8 @@
       <br />
       <v-text-field class="spaceMeOut" v-model="comment" name="CommentBody" label="Comment..."></v-text-field>
       <br />
-      <router-link to="/">
-        <v-btn class="spaceMeOut" round block color="blue darken-1" v-on:click="executeComment" dark>Submit Comment</v-btn>
+      <router-link class="addCommentButton" to="/">
+        <v-btn class="spaceMeOut" round block color="light-blue darken-1" v-on:click="executeComment" dark>Submit Comment</v-btn>
       </router-link>
     </v-flex>
   </v-layout>
@@ -41,6 +41,10 @@
 }
 .spaceMeOut {
   margin-bottom: 4%;
+}
+
+.addCommentButton {
+  text-decoration: none;
 }
 
 </style>
