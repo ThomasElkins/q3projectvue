@@ -1,6 +1,6 @@
 # find-a-trail
 
-# API token pk.eyJ1IjoidGhvbWFzZWxraW5zIiwiYSI6ImNqOGtmMWQ0dzBkNzkydmpzNjJtdW53MTIifQ.D1AOsU5Ffm2at-y0ORByUw
+
 
 > A Vue.js project
 
