@@ -26,7 +26,7 @@ export const store = new Vuex.Store({
       state.currentCity = args
     },
     addComment(state, [user_name, city, hike_name, comment]) {
-      axios.post(`http://localhost:8000/comments`, {
+      axios.post(`https://find-a-trail-backend.herokuapp.com/comments`, {
         user_name: user_name, city: city, hike_name: hike_name, comment: comment
       })
       .then(res => state.comments = res.data)
@@ -40,7 +40,7 @@ export const store = new Vuex.Store({
           .then(res => context.commit('setTrails', res.data.places))
     },
     getComments(context) {
-      axios.get(`http://localhost:8000/comments`)
+      axios.get(`https://find-a-trail-backend.herokuapp.com/comments`)
         .then(res => context.commit('setComments', res.data))
     },
     getCity(context, searchCity) {
